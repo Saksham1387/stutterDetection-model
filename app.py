@@ -21,7 +21,7 @@ with open('scaler.pkl', 'rb') as scaler_file:
 with open('rf_model_weights.pkl', 'rb') as model_file:
     model = pickle.load(model_file)
 
-@app.route('/predict', methods=['POST'])
+@app.route('/', methods=['POST'])
 def predict():
     if 'audio' not in request.files:
         return jsonify({'error': 'No audio file provided'}), 400
